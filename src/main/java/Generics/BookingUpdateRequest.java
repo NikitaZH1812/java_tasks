@@ -23,6 +23,7 @@ public class BookingUpdateRequest {
     public void setBookingRequest(Generics.BookingRequest bookingRequest) {
         BookingRequest = bookingRequest;
     }
+
 }
 class BookingRequest {
 

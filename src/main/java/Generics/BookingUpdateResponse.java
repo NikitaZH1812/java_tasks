@@ -21,7 +21,7 @@ package Generics;
 }
  */
 
-public class BookingUpdateResponse {
+public class BookingUpdateResponse{
     private BookingResponse BookingResponse;
 
     public BookingUpdateResponse(BookingResponse BookingResponse) {
@@ -35,9 +35,10 @@ public class BookingUpdateResponse {
     public void setBookingResponse(Generics.BookingResponse bookingResponse) {
         BookingResponse = bookingResponse;
     }
+
 }
 
-class BookingResponse {
+class BookingResponse implements Comparable<BookingResponse> {
     private int id;
     private Integer tutorId;
     private String status;
@@ -120,6 +121,11 @@ class BookingResponse {
 
     public void setChild(Child child) {
         this.child = child;
+    }
+
+    @Override
+    public int compareTo(BookingResponse other) {
+        return Integer.compare(this.id, other.id);
     }
 }
 
